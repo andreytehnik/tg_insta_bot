@@ -1,4 +1,4 @@
-# Telegram Instagram Downloader Bot
+# Instagram Downloader Bot For Telegram
 
 Бот для автоматического скачивания постов, Reels и каруселей из Instagram с публикацией в ваш Telegram-канал. Работает в фоне через очередь с настраиваемыми задержками, чтобы Instagram не заблокировал.
 

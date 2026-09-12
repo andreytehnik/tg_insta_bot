@@ -13,7 +13,7 @@
 ### 1. Клонируйте репозиторий
 
 ```bash
-git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ>
+git clone https://github.com/andreytehnik/tg_insta_bot.git
 cd tg_insta_bot
 ```
 

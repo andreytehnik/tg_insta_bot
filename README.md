@@ -91,4 +91,4 @@ systemctl --user stop tg_insta_bot.service
 
 ## Лицензия
 
-MIT — делайте что хотите.
+[MIT](LICENSE) — делайте что хотите.

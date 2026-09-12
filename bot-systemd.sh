@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Получаем абсолютную директорию, в которой лежит этот скрипт и проект
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SERVICE_NAME="tg_insta_bot.service"
 SERVICE_DIR="$HOME/.config/systemd/user"
@@ -8,7 +7,6 @@ SERVICE_PATH="$SERVICE_DIR/$SERVICE_NAME"
 
 echo "⚙️ Рабочая директория проекта: $DIR"
 
-# Проверка и создание виртуального окружения
 if [ ! -d "$DIR/venv" ]; then
     echo "📦 Виртуальное окружение не найдено. Создаю..."
     python3 -m venv "$DIR/venv"
@@ -26,10 +24,8 @@ fi
 
 echo "⚙️ Подготовка пользовательской службы systemd..."
 
-# Создаем директорию для пользовательских служб, если ее нет
 mkdir -p "$SERVICE_DIR"
 
-# Создаем файл службы systemd (без sudo)
 cat <<EOF > "$SERVICE_PATH"
 [Unit]
 Description=Telegram Instagram Downloader Bot
@@ -55,7 +51,6 @@ systemctl --user enable $SERVICE_NAME
 echo "🚀 Перезапуск / запуск бота..."
 systemctl --user restart $SERVICE_NAME
 
-# Разрешаем фоновым службам работать после закрытия сессии
 loginctl enable-linger $USER
 
 echo "🎉 Готово! Бот развернут и запущен в фоне."
